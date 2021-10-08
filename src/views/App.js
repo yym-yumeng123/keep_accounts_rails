@@ -4,15 +4,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        21212
       </header>
+      <footer>
+        我是底部
+      </footer>
     </div>
   );
 }
