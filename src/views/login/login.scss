@@ -1,14 +1,13 @@
-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 30px 0;
-  .logo {
-    width: 62px;
-    height: 61px;
-  }
-  p {
-    font-size: 17px;
+
+
+main {
+  .action {
+    padding: 0 12px;
+    text-align: right;
+    span {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 17px;
+    }
   }
 }
