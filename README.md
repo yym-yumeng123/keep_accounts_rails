@@ -1,1 +1,1 @@
-# keep_accounts_rails
+# 记账
