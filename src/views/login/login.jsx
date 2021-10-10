@@ -1,5 +1,7 @@
 import React from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
+
 import Header from "../../components/Header/Header"
 import "./login.scss"
 
@@ -53,7 +55,7 @@ const Login = () => {
           </Form.Item>
         </Form>
         <div className='action'>
-          <span>新用户注册</span>
+          <Link to='/register'>新用户注册</Link>
         </div>
       </main>
     </>

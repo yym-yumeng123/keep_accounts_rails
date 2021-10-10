@@ -1,12 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import Login from './views/login/login.jsx';
-import Register from './views/register/rejister.jsx';
+import React from "react"
+import ReactDOM from "react-dom"
+import { BrowserRouter as Router } from "react-router-dom"
+import "./index.scss"
+import App from "./views/App"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Register />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>,
-  document.getElementById('root')
-);
+  document.getElementById("root")
+)

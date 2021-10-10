@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import Header from "../../components/Header/Header"
 
 import { Form, Input, Button } from "antd-mobile"
@@ -7,6 +8,7 @@ const Register = () => {
   const [form] = Form.useForm()
   const onSubmit = () => {
     const values = form.getFieldsValue()
+    console.log(values, "434")
   }
   return (
     <div>
@@ -51,8 +53,8 @@ const Register = () => {
             />
           </Form.Item>
         </Form>
-        <div style={{textAlign: 'center', marginTop: '20px'}}>
-          <span>注册过了，直接登录</span>
+        <div style={{ textAlign: "center", marginTop: "20px" }}>
+          <Link to='/login'>注册过了，直接登录</Link>
         </div>
       </main>
     </div>
