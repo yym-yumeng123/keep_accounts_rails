@@ -1,14 +1,15 @@
 import React from "react"
 import axios from "axios"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 import Header from "../../components/Header/Header"
 import "./login.scss"
 
-import { Form, Input, Button } from "antd-mobile"
+import { Form, Input, Button, Toast } from "antd-mobile"
 
 const Login = () => {
   const [form] = Form.useForm()
+  let history = useHistory()
 
   const onSubmit = () => {
     const values = form.getFieldsValue()
@@ -17,6 +18,16 @@ const Login = () => {
       .post("/sessions", values)
       .then(function (response) {
         console.log(response)
+        const {
+          data: { status, msg },
+        } = response
+        if (status === 200 && msg === "success") {
+          Toast.show({
+            content: "登录成功",
+            position: "top",
+          })
+          history.push("/")
+        }
       })
       .catch(function (error) {
         console.log(error)
