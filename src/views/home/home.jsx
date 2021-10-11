@@ -1,5 +1,9 @@
 import React, { useState } from "react"
-import { Badge, TabBar } from "antd-mobile"
+import { TabBar } from "antd-mobile"
+import Bill from "./components/Bill"
+import PersonCenter from "./components/PersonCenter"
+import Record from "./components/Record"
+import Tag from "./components/Tag"
 import "./home.scss"
 import {
   AppOutline,
@@ -11,17 +15,17 @@ import {
 const Home = () => {
   const tabs = [
     {
-      key: "home",
-      title: "首页",
+      key: "bill",
+      title: "账单",
       icon: <AppOutline />,
     },
     {
-      key: "todo",
+      key: "tag",
       title: "标签",
       icon: <UnorderedListOutline />,
     },
     {
-      key: "message",
+      key: "record",
       title: "记一笔",
       icon: <MessageFill />,
     },
@@ -32,14 +36,17 @@ const Home = () => {
     },
   ]
 
-  const [activeKey, setActiveKey] = useState("home")
+  const mapTabs = {
+    bill: <Bill />,
+    tag: <Tag />,
+    record: <Record />,
+    personalCenter: <PersonCenter />,
+  }
+
+  const [activeKey, setActiveKey] = useState("bill")
   return (
     <div className='home'>
-      <div className='content'>
-        <div className='item' style={{ height: "200px" }}>
-          我是首页
-        </div>
-      </div>
+      <div className='content'>{mapTabs[activeKey]}</div>
       <div className='tabBar'>
         <TabBar activeKey={activeKey} onChange={setActiveKey}>
           {tabs.map((item) => (
