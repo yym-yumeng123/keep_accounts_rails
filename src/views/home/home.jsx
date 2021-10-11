@@ -1,13 +1,12 @@
 import React, { useState } from "react"
 import { TabBar } from "antd-mobile"
-import Bill from "./components/Bill"
+import Bill from "./components/Bill/Bill"
 import PersonCenter from "./components/PersonCenter"
 import Record from "./components/Record"
 import Tag from "./components/Tag"
 import "./home.scss"
 import {
   AppOutline,
-  MessageOutline,
   MessageFill,
   UnorderedListOutline,
   UserOutline,
